@@ -1,0 +1,74 @@
+# RIL
+rild.libpath=/system/lib/libril-qc-1.so
+rild.libargs=-d /dev/smd0
+ro.ril.gprsclass=10
+ro.ril.hsxpa=1
+ro.telephony.ril.v3=icccardstatus,datacall,signalstrength,facilitylock
+ro.telephony.call_ring.multiple=false
+ro.telephony.call_ring.delay=3000
+
+# WiFi
+wifi.ap.interface=wl0.1
+wifi.interface=wlan0
+wifi.supplicant_scan_interval=120
+
+# Power Saving/Sleep
+ro.ril.disable.power.collapse=0
+pm.sleep_mode=1
+
+# Graphics
+debug.sf.hw=1
+ro.max.fling_velocity=12000
+ro.min.fling_velocity=8000
+ro.sf.lcd_density=240
+ro.sf.hwrotation=180
+qemu.sf.lcd_density=240
+debug.gr.numframebuffers=3
+windowsmgr.max_events_per_sec=150
+debug.performance.tuning=1
+video.accelerate.hw=1
+ro.opengles.version=131072
+ro.opengles.surface.rgb565=true
+com.qc.hardware=true
+debug.enabletr=false
+debug.hwui.render_dirty_regions=false
+debug.qctwa.statusbar=1
+debug.qctwa.preservebuf=1
+hwui.print_config=choice
+persist.sys.strictmode.visual=false
+ro.bq.gpu_to_cpu_unsupported=1
+
+# Better Image & Audio Quality
+ro.media.dec.jpeg.memcap=8000000
+ro.media.enc.hprof.vid.bps=8000000
+ro.media.enc.jpeg.quality=100
+debug.camcorder.disablemeta=1
+
+# Stagefright
+media.stagefright.enable-player=true
+media.stagefright.enable-meta=false
+media.stagefright.enable-scan=false
+media.stagefright.enable-http=true
+media.stagefright.enable-aac=true
+media.stagefright.enable-qcp=true
+
+# USB Mass Storage
+persist.sys.usb.config=mass_storage,adb
+persist.service.adb.enable=1
+persist.service.debuggable=1
+# Don't set /proc/sys/vm/dirty_ratio to 0 when USB mounting
+ro.vold.umsdirtyratio=20
+
+# Dalvik
+dalvik.vm.checkjni=false
+ro.kernel.android.checkjni=0
+
+# Experimental
+sys.mem.max_hidden_apps=10
+persist.sys.use_dithering=2
+persist.sys.scrollingcache=3
+debug.enabletr=false
+debug.sf.no_hw_vsync=1
+debug.hwui.render_dirty_regions=false
+debug.hwui.disable_vsync=false
+persist.sys.purgeable_assets=1

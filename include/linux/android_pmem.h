@@ -8,7 +8,7 @@
  * may be copied, distributed, and modified under those terms.
  *
  * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of 
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
@@ -45,7 +45,7 @@
  */
 #define PMEM_CONNECT		_IOW(PMEM_IOCTL_MAGIC, 6, unsigned int)
 /* Returns the total size of the pmem region it is sent to as a pmem_region
- * struct (with offset set to 0). 
+ * struct (with offset set to 0).
  */
 #define PMEM_GET_TOTAL_SIZE	_IOW(PMEM_IOCTL_MAGIC, 7, unsigned int)
 /* Revokes gpu registers and resets the gpu.  Pass a pointer to the
@@ -156,6 +156,24 @@ struct android_pmem_platform_data
 	unsigned buffered;
 	/* This PMEM is on memory that may be powered off */
 	unsigned unstable;
+	/*
+	 * function to be called when the number of allocations goes from
+	 * 0 -> 1
+	 */
+	void (*request_region)(void *);
+	/*
+	 * function to be called when the number of allocations goes from
+	 * 1 -> 0
+	 */
+	void (*release_region)(void *);
+	/*
+	 * function to be called upon pmem registration
+	 */
+	void *(*setup_region)(void);
+	/*
+	 * indicates that this region should be mapped/unmaped as needed
+	 */
+	int map_on_demand;
 };
 
 int pmem_setup(struct android_pmem_platform_data *pdata,

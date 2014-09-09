@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Disable homescreen scrolling wallpaper -->
+    <bool name="preferences_interface_homescreen_scrolling_wallpaper_scroll_default">false</bool>
+</resources>

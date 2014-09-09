@@ -1,0 +1,26 @@
+From ddbeb9eabf0db0acdfc4cc93ed7f82574718b99e Mon Sep 17 00:00:00 2001
+From: mksy <maksik.boy@gmail.com>
+Date: Sun, 23 Mar 2014 17:33:56 +0200
+Subject: [PATCH] Since oom_adj is deprecated, let's use oom_score_adj.
+
+Change-Id: I0759fcad2384457709485ada3b9217507d8bb891
+---
+ adb/services.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/adb/services.c b/adb/services.c
+index 8244a52..e2d4b0c 100644
+--- a/adb/services.c
++++ b/adb/services.c
+@@ -250,7 +250,7 @@ static int create_subprocess(const char *cmd, const char *arg0, const char *arg1
+ 
+         // set OOM adjustment to zero
+         char text[64];
+-        snprintf(text, sizeof text, "/proc/%d/oom_adj", getpid());
++        snprintf(text, sizeof text, "/proc/%d/oom_score_adj", getpid());
+         int fd = adb_open(text, O_WRONLY);
+         if (fd >= 0) {
+             adb_write(fd, "0", 1);
+-- 
+1.9.1
+
