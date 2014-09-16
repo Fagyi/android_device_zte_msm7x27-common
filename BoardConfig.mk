@@ -132,6 +132,9 @@ TARGET_DISABLE_ARM_PIE          	:= true
 # Override healthd HAL
 BOARD_HAL_STATIC_LIBRARIES 		:= libhealthd.msm7x27
 
+# Force the screenshot path to CPU consumer
+COMMON_GLOBAL_CFLAGS 			+= -DFORCE_SCREENSHOT_CPU_PATH
+
 # Metadata
 SKIP_SET_METADATA 			:= true
 USE_SET_METADATA 			:= false

@@ -153,6 +153,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.boot.selinux=permissive
 
+# Don't preload EGL drivers in Zygote at boot time
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.zygote.disable_gl_preload=true
+
 # Install/Uninstall google apps
 $(call inherit-product, vendor/google/gapps_armv6_tiny.mk)
 
