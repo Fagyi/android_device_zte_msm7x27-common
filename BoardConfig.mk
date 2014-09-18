@@ -143,7 +143,7 @@ BOARD_UMS_LUNFILE 			:= "/sys/devices/platform/msm_hsusb/gadget/lun0/file"
 TARGET_USE_CUSTOM_LUN_FILE_PATH 	:= /sys/devices/platform/msm_hsusb/gadget/lun0/file
 
 # SELinux
-BOARD_SEPOLICY_DIRS += device/zte/msm7x27-common/sepolicy
+BOARD_SEPOLICY_DIRS += device/zte/skate/sepolicy
 BOARD_SEPOLICY_UNION += \
     file_contexts \
     genfs_contexts
