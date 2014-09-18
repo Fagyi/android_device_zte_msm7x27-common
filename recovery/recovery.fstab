@@ -7,8 +7,7 @@ system			/system		yaffs2	defaults		recoveryonly
 boot			/boot		mtd	defaults		recoveryonly
 misc			/misc		mtd	defaults		recoveryonly
 recovery		/recovery	mtd	defaults		recoveryonly
-/dev/block/mmcblk0p1    /sdcard         auto    defaults                recoveryonly
 /dev/block/mmcblk0p2	/sd-ext		ext4	defaults		recoveryonly
 
 /dev/block/mmcblk0	auto		auto	defaults		voldmanaged=sdcard0:auto,noemulatedsd
-/dev/block/zram0        none            swap            defaults                                zramsize=67108864,swapprio=1
+/dev/block/zram0				none	swap	defaults	zramsize=67108864,swapprio=1

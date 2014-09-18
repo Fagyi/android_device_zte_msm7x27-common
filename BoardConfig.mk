@@ -41,9 +41,8 @@ BOARD_BLUEDROID_VENDOR_CONF 		:= device/zte/skate/bluetooth/libbt_vndcfg.txt
 include vendor/zte/skate/BoardConfigVendor.mk
 
 # Recovery
-# BOARD_CUSTOM_RECOVERY_KEYMAPPING 	:= ../../device/zte/skate/recovery/recovery_keys.c
-BOARD_HAS_NO_SELECT_BUTTON 		:= true
-BOARD_RECOVERY_SWIPE 			:= true
+BOARD_CUSTOM_GRAPHICS 				:= ../../../device/zte/skate/recovery/graphics.c
+BOARD_CUSTOM_RECOVERY_KEYMAPPING 	:= ../../device/zte/skate/recovery/recovery_keys.c
 TARGET_NO_INITLOGO 			:= true
 TARGET_NO_SEPARATE_RECOVERY 		:= true
 TARGET_RECOVERY_PIXEL_FORMAT 		:= "RGB_565"
