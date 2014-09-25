@@ -108,6 +108,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.debug.alloc=0 \
     dalvik.vm.dexopt-data-only=1
 
+# Reduce background apps limit to 16 on low-tier devices
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sys.fw.bg_apps_limit=16
+
+# Set max background services
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.config.max_starting_bg=8
+
 # Disable strict mode
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.strictmode.visual=0 \
